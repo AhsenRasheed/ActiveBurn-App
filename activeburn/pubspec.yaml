@@ -1,4 +1,4 @@
-name: activeburn
+name: active_burn_app
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -34,6 +34,14 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  # form | fields
+  flutter_form_builder:
+    git:
+      url: https://github.com/voxlabsio/flutter_form_builder.git
+  #firebase
+  firebase_auth: ^3.6.2
+  firebase_core: ^1.20.0
+  
 
 dev_dependencies:
   flutter_test:
@@ -58,9 +66,14 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+     - assets/icons/plans icon.png
+     - assets/icons/dashboard.png
+     - assets/active_burn.png
+     - assets/signIn.png
+     - assets/signUp.png
+     - assets/upper circle.png
+     - assets/lower circle.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
