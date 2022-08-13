@@ -73,7 +73,7 @@ flutter:
      - assets/signIn.png
      - assets/signUp.png
      - assets/upper circle.png
-     - assets/lower circle.png
+     - assets/bottom circle.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

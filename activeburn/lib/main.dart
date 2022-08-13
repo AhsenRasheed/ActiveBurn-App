@@ -1,3 +1,4 @@
+import 'package:active_burn_app/active_burn_splash.dart';
 import 'package:active_burn_app/views/nav_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -13,13 +14,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Shapito',
+      title: 'Active Burn',
       theme: ThemeData(
         primaryColor: const Color(0xFF6BEEEA),
         buttonColor: const Color(0xFF27D3CE),
         //elevatedButtonTheme: ElevatedButtonThemeData(style: ButtonStyle())
       ),
-      home: const NavBar(),
+      home: const StartUp(),
     );
   }
 
