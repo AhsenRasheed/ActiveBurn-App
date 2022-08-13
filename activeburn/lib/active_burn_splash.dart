@@ -1,6 +1,5 @@
+import 'package:active_burn_app/auth/SignUp.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class StartUp extends StatelessWidget {
   const StartUp({Key? key}) : super(key: key);
@@ -53,7 +52,10 @@ class StartUp extends StatelessWidget {
                     primary: Theme.of(context).primaryColor,
                     minimumSize: const Size.fromHeight(50), // NEW
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) => signup()));
+                  },
                   child: const Text(
                     "Get Started",
                   ),
