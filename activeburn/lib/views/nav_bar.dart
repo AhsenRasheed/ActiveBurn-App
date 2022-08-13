@@ -12,7 +12,7 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
-   static const List<Widget> _pages = <Widget>[
+  static const List<Widget> _pages = <Widget>[
     HomeScreen(),
     PlansScreen(),
     MenuScreen(),
@@ -20,45 +20,124 @@ class _NavBarState extends State<NavBar> {
 
   int _selectedIndex = 0; //New
 
-//New
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
-        bottomNavigationBar: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: ImageIcon(
-                AssetImage("assets/icons/dashboard.png"),
-                size: 150,
-              ),
-              label: "Dasboard",
-            ),
-            BottomNavigationBarItem(
-              icon: ImageIcon(
-                AssetImage("assets/icons/plans icon.png"),
-                size: 150,
-              ),
-              label: "Plans",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.menu,
-                size: 150,
-              ),
-              label: "Menu",
-            ),
-          ],
-          currentIndex: _selectedIndex, //New
-          onTap: _onItemTapped, //New
+      resizeToAvoidBottomInset: true,
+      backgroundColor: Colors.white,
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(90.0), topRight: Radius.circular(90.0)),
+          color: Theme.of(context).bottomAppBarColor,
         ),
-        body: _pages.elementAt(_selectedIndex),
-        );
+        height: MediaQuery.of(context).size.height * 0.1,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
+                enableFeedback: false,
+                onPressed: () {
+                  setState(() {
+                    _selectedIndex = 0;
+                  });
+                },
+                icon: _selectedIndex == 0
+                    ? const CircleAvatar(
+                        foregroundColor: Colors.white,
+                        backgroundColor: Color.fromARGB(255, 52, 51, 51),
+                        minRadius: 60,
+                        child: ImageIcon(
+                          AssetImage("assets/icons/dashboard white.png"),
+                          size: 27,
+                        ),
+                      )
+                    : const ImageIcon(
+                        AssetImage("assets/icons/dashboard white.png"),
+                        size: 25,
+                      )),
+            IconButton(
+                enableFeedback: false,
+                onPressed: () {
+                  setState(() {
+                    _selectedIndex = 1;
+                  });
+                },
+                icon: _selectedIndex == 1
+                    ? const CircleAvatar(
+                        foregroundColor: Colors.white,
+                        backgroundColor: Color.fromARGB(255, 52, 51, 51),
+                        radius: 100,
+                        child: ImageIcon(
+                          AssetImage("assets/icons/plans icon white.png"),
+                          size: 27,
+                        ),
+                      )
+                    : const ImageIcon(
+                        AssetImage("assets/icons/plans icon.png"),
+                        size: 25,
+                      )),
+            IconButton(
+                enableFeedback: false,
+                onPressed: () {
+                  setState(() {
+                    _selectedIndex = 2;
+                  });
+                },
+                icon: _selectedIndex == 2
+                    ? const CircleAvatar(
+                        foregroundColor: Colors.white,
+                        backgroundColor: Color.fromARGB(255, 52, 51, 51),
+                        radius: 100,
+                        child: Icon(
+                          Icons.menu,
+                          size: 27,
+                        ),
+                      )
+                    : const Icon(
+                        Icons.menu,
+                        size: 25,
+                      )),
+            // BottomNavigationBarItem(
+            //   icon: ImageIcon(
+            //     AssetImage("assets/icons/dashboard.png"),
+            //     size: 25,
+            //   ),
+            //   label: "Dasboard",
+            // ),
+            // BottomNavigationBarItem(
+            //   icon: ImageIcon(
+            //     AssetImage("assets/icons/plans icon.png"),
+            //     size: 25,
+            //   ),
+            //   label: "Plans",
+            // ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(
+            //     Icons.menu,
+            //     size: 25,
+            //   ),
+            //   label: "Menu",
+            // ),
+          ],
+          // currentIndex: _selectedIndex, //New
+          // onTap: _onItemTapped, //New
+          // selectedItemColor: Colors.white,
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.2,
+              child: Image.asset(
+                "assets/upper circle.png",
+              ),
+            ),
+            _pages.elementAt(_selectedIndex),
+          ],
+        ),
+      ),
+    );
   }
 }

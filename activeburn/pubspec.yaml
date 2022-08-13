@@ -70,11 +70,17 @@ flutter:
   assets:
      - assets/icons/plans icon.png
      - assets/icons/dashboard.png
+     - assets/icons/dashboard white.png
+     - assets/icons/plans icon white.png
      - assets/active_burn.png
      - assets/signIn.png
      - assets/signUp.png
      - assets/upper circle.png
+
     #  - assets/lower circle.png
+
+     - assets/bottom circle.png
+     - assets/food.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
