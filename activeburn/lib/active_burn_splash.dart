@@ -19,31 +19,35 @@ class StartUp extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.2,
+                height: MediaQuery.of(context).size.height * 0.18,
               ),
               SizedBox(
                   height: MediaQuery.of(context).size.height * 0.25,
                   child: Image.asset("assets/active_burn.png")),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.07,
+                height: MediaQuery.of(context).size.height * 0.06,
               ),
-              const Text(
-                "Get things done with Active Burn",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24,
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: const Text(
+                  "Get things done with Active Burn",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
               ),
               const Padding(
                 padding: EdgeInsets.all(40),
                 child: Text(
-                  "We are here to provide you fast services on the time and have all featured management system for our clients.\n Our client satisfaction is our first priority",
+                  "We are here to provide you fast\n services on the time and have all featured\n management system for our clients.\n Our client satisfaction is our first \npriority",
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 15),
                 ),
               ),
               const SizedBox(
-                height: 40,
+                height: 20,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 60),

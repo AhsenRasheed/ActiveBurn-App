@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Active Burn',
       theme: ThemeData(
-        primaryColor: const Color(0xFF6BEEEA),
+        primaryColor: const Color(0xFF4DC1B5),
         buttonColor: const Color(0xFF27D3CE),
         //elevatedButtonTheme: ElevatedButtonThemeData(style: ButtonStyle())
       ),
