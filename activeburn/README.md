@@ -1,4 +1,4 @@
-# activeburn
+# active_burn_app
 
 A new Flutter project.
 
