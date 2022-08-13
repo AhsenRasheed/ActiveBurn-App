@@ -1,8 +1,12 @@
+import 'package:active_burn_app/authentication/sign_up.dart';
 import 'package:active_burn_app/views/nav_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -19,7 +23,7 @@ class MyApp extends StatelessWidget {
         buttonColor: const Color(0xFF27D3CE),
         //elevatedButtonTheme: ElevatedButtonThemeData(style: ButtonStyle())
       ),
-      home: const NavBar(),
+      home:  signup(),
     );
   }
 

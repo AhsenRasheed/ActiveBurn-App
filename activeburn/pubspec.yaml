@@ -41,6 +41,7 @@ dependencies:
   #firebase
   firebase_auth: ^3.6.2
   firebase_core: ^1.20.0
+  cloud_firestore: ^3.4.4
   
 
 dev_dependencies:
@@ -73,7 +74,7 @@ flutter:
      - assets/signIn.png
      - assets/signUp.png
      - assets/upper circle.png
-     - assets/lower circle.png
+    #  - assets/lower circle.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
