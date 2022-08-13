@@ -17,10 +17,12 @@ class MyApp extends StatelessWidget {
       title: 'Active Burn',
       theme: ThemeData(
         primaryColor: const Color(0xFF4DC1B5),
+        bottomAppBarColor: Color(0xFF80EAE6),
         buttonColor: const Color(0xFF27D3CE),
+        backgroundColor: Color.fromARGB(255, 88, 85, 85),
         //elevatedButtonTheme: ElevatedButtonThemeData(style: ButtonStyle())
       ),
-      home: const StartUp(),
+      home: const NavBar(),
     );
   }
 
