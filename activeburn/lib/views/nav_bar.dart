@@ -1,8 +1,8 @@
+import 'package:active_burn_app/views/menu.dart';
 import 'package:active_burn_app/views/plans.dart';
 import 'package:flutter/material.dart';
 
 import 'home.dart';
-import 'menu.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({Key? key}) : super(key: key);

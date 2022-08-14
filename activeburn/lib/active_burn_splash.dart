@@ -1,4 +1,4 @@
-import 'package:active_burn_app/auth/SignUp.dart';
+import 'package:active_burn_app/authentication/sign_in.dart';
 import 'package:flutter/material.dart';
 
 class StartUp extends StatelessWidget {
@@ -58,7 +58,7 @@ class StartUp extends StatelessWidget {
                   ),
                   onPressed: () {
                     Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (context) => signup()));
+                        MaterialPageRoute(builder: (context) => signin()));
                   },
                   child: const Text(
                     "Get Started",

@@ -3,7 +3,9 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last, deprecated_member_use
 
 import 'package:active_burn_app/views/menu.dart';
+import 'package:active_burn_app/views/nav_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import 'Sign_up.dart';
 import 'auth_methods.dart';
@@ -101,6 +103,7 @@ class signin extends StatelessWidget {
                             height: MediaQuery.of(context).size.height * 0.09,
                             width: MediaQuery.of(context).size.height * 0.45,
                             child: TextFormField(
+                              obscureText: true,
                               controller: _password,
                               decoration: InputDecoration(
                                 hintText: 'Enter Password',
@@ -122,34 +125,39 @@ class signin extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 13),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.08,
-                    width: MediaQuery.of(context).size.height * 0.42,
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 60),
                     child: ElevatedButton(
-                        onPressed: () => {
-                              logIn(_email.text, _password.text).then((user) {
-                                if (user != null) {
-                                  print("Fuck you bruh");
-                                  Navigator.push(context, MaterialPageRoute(builder: (_) => MenuScreen()));
-                                  
-                                } else {
-                                  print("Login Failed");
-                                }
-                              })
-                            },
-                        child: Text(
-                          'Sign In',
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          primary: Theme.of(context).buttonColor,
-                          textStyle: TextStyle(
-                            fontSize: 15,
-                          ),
-                        )),
+                      onPressed: () => {
+                        if(_email.text.isEmpty || _password.text.isEmpty){
+                          Fluttertoast.showToast(msg: "Invalid fields"),
+                        }else{
+                        logIn(_email.text, _password.text).then((user) {
+                          if (user != null) {
+                            Fluttertoast.showToast(msg: "Logged In");
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => NavBar()));
+                          } else {
+                            Fluttertoast.showToast(msg: "LogIn failed");
+                          }
+                        })
+                        }
+                      },
+                      child: Text(
+                        'Sign In',
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        primary: Theme.of(context).primaryColor,
+                        minimumSize: const Size.fromHeight(50), // NEW
+                      ),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 45),
                     child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
                           "Don't Have an Account?",
@@ -157,7 +165,7 @@ class signin extends StatelessWidget {
                         ),
                         TextButton(
                           onPressed: () async {
-                            Navigator.push(
+                            Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => signup()));
